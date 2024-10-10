@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<component type="desktop">
+  <!--Created with
+  jdAppStreamEdit 7.1-->
+  <id>com.useanything.AnythingLLMDesktop</id>
+  <name>AnythingLLM</name>
+  <summary>The all-in-one AI application</summary>
+  <developer id="com.useanything">
+    <name>Mintplex Labs Inc.</name>
+  </developer>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <launchable type="desktop-id">com.useanything.AnythingLLMDesktop.desktop</launchable>
+  <description>
+    <p>AnythingLLM is the easiest to use, all-in-one AI application that can do RAG, AI Agents, and much more with no code or infrastructure headaches.</p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>Main Screen</caption>
+      <image type="source">https://private-user-images.githubusercontent.com/16845892/294273127-cfc5f47c-bd91-4067-986c-f3f49621a859.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Mjg1NDYxMzIsIm5iZiI6MTcyODU0NTgzMiwicGF0aCI6Ii8xNjg0NTg5Mi8yOTQyNzMxMjctY2ZjNWY0N2MtYmQ5MS00MDY3LTk4NmMtZjNmNDk2MjFhODU5LmdpZj9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDEwMTAlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMDEwVDA3MzcxMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTFjZTFjYTI5NTJjMTdmNDFiNzc3ZGI0YjlkZDVhYzhkZjBiMzQ1NDRlMmVhMmQwYTI4MDFmMGNhYmNmODkwZGEmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.Y_jKQbFFUtuv5Xb47Zj1RkJqeifl_d8ei7boAjQ289k</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.6.7" date="2024-09-14" type="stable" />
+  </releases>
+  <url type="homepage">https://anythingllm.com/</url>
+  <url type="bugtracker">https://github.com/Mintplex-Labs/anything-llm/issues</url>
+  <url type="help">https://docs.anythingllm.com/</url>
+  <categories>
+    <category>Utility</category>
+    <category>Office</category>
+  </categories>
+  <content_rating type="oars-1.1" />
+</component>

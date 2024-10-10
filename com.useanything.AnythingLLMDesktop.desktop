@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=AnythingLLM
+Exec=/app/run.sh %U
+Terminal=false
+Type=Application
+Icon=com.useanything.AnythingLLMDesktop
+StartupWMClass=AnythingLLM
+Comment=AnythingLLM Desktop Application
+Categories=Utility;

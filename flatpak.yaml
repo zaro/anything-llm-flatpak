@@ -1,0 +1,44 @@
+id: com.useanything.AnythingLLMDesktop
+runtime: org.freedesktop.Platform
+runtime-version: "24.08"
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: "24.08"
+command: /app/run.sh
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=fallback-x11
+  - --socket=wayland
+  - --device=dri
+  - --socket=session-bus
+  - --socket=system-bus
+  - --device=dri
+  - --share=network
+  - --filesystem=home
+modules:
+  - name: anythingllmdesktop
+    buildsystem: simple
+    build-commands:
+      - chmod +x *.AppImage && ./AnythingLLMDesktop.AppImage --appimage-extract
+      - rm *.AppImage
+      - ffmpeg -i squashfs-root/anythingllm-desktop.png -vf scale=512:512 com.useanything.AnythingLLMDesktop.png
+      - install -Dm644 com.useanything.AnythingLLMDesktop.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/com.useanything.AnythingLLMDesktop.png
+      - install -Dm644 com.useanything.AnythingLLMDesktop.desktop -t ${FLATPAK_DEST}/share/applications/
+      - install -Dm644 com.useanything.AnythingLLMDesktop.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/
+      - mv squashfs-root /app/anythingllm-desktop
+      - install -Dm755 -t /app/ run.sh
+    sources:
+      - type: file
+        path: com.useanything.AnythingLLMDesktop.desktop
+        sha256: 89729baaabdc5207e8a7d2b8d8c2e6abb5fcf0e2b74c26996db95f81dac1bfe4
+      - type: file
+        path: com.useanything.AnythingLLMDesktop.metainfo.xml
+        sha256: a85fe74a92488ad49dcaef807c2d90028a163a21cfbf8a0b12d876a68c72f94d
+      - type: file
+        url: https://s3.us-west-1.amazonaws.com/public.useanything.com/latest/AnythingLLMDesktop.AppImage
+        sha256: ca817e7cdb2ac6fd0634e85d7061970d055c835b619e8c5c5cc2d113ba70bc19
+      - type: script
+        dest-filename: run.sh
+        commands:
+          - exec /app/anythingllm-desktop/anythingllm-desktop --no-sandbox  "$@"

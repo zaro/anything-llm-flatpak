@@ -27,6 +27,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
+        with:
+          name: AnythingLLM-x86_64
       - name: Display structure of downloaded files
         run: ls -R
       - name: Create Release

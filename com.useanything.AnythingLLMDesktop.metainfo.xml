@@ -1,7 +1,5 @@
-<?xml version='1.0' encoding='utf-8'?>
 <component type="desktop">
-  <!--Created with
-  jdAppStreamEdit 7.1-->
+
   <id>com.useanything.AnythingLLMDesktop</id>
   <name>AnythingLLM</name>
   <summary>The all-in-one AI application</summary>
@@ -21,7 +19,7 @@
     </screenshot>
   </screenshots>
   <releases>
-    <release version="1.6.7" date="2024-09-14" type="stable" />
+    <release type="stable" version="1.6.7" date="2024-09-14" />
   </releases>
   <url type="homepage">https://anythingllm.com/</url>
   <url type="bugtracker">https://github.com/Mintplex-Labs/anything-llm/issues</url>

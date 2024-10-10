@@ -1,0 +1,12 @@
+[
+  {
+    "type": "file",
+    "url": "https://s3.us-west-1.amazonaws.com/public.useanything.com/latest/AnythingLLMDesktop.AppImage",
+    "sha256": "ca817e7cdb2ac6fd0634e85d7061970d055c835b619e8c5c5cc2d113ba70bc19"
+  },
+  {
+    "type": "file",
+    "path": "com.useanything.AnythingLLMDesktop.metainfo.xml",
+    "sha256": "29d4871e7cffc899e11e7b0700a5b30207e1e2f9316485c3efb8c7e702169e39"
+  }
+]

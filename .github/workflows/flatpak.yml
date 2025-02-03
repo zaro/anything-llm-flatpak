@@ -6,6 +6,9 @@ on:
 name: CI
 jobs:
   flatpak:
+    permissions:
+      actions: write
+      
     name: "Flatpak"
     runs-on: ubuntu-latest
     container:

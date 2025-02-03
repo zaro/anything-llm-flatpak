@@ -1,12 +1,12 @@
 [
   {
     "type": "file",
-    "url": "https://s3.us-west-1.amazonaws.com/public.useanything.com/latest/AnythingLLMDesktop.AppImage",
-    "sha256": "ca817e7cdb2ac6fd0634e85d7061970d055c835b619e8c5c5cc2d113ba70bc19"
+    "url": "https://cdn.useanything.com/latest/AnythingLLMDesktop.AppImage",
+    "sha256": "d0aeb1e2b730c29e50090c53610df3945e1c4d6e102956820e9d1cc2ef001c94"
   },
   {
     "type": "file",
     "path": "com.useanything.AnythingLLMDesktop.metainfo.xml",
-    "sha256": "8cc6cf07e68296aceefb35d76f713048e2c63627b01ea2e5b52eb0eaf4dcf9e6"
+    "sha256": "77c9ea185c59db9afc21a04b9457b3923bbf7f519ae667498fcc4120a5749dc8"
   }
 ]

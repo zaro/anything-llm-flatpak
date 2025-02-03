@@ -20,7 +20,7 @@
   </screenshots>
   <releases>
     <release type="stable" version="1.6.7" date="2024-09-14" />
-  </releases>
+  <release type="stable" version="1.7.3" date="2025-01-29" /></releases>
   <url type="homepage">https://anythingllm.com/</url>
   <url type="bugtracker">https://github.com/Mintplex-Labs/anything-llm/issues</url>
   <url type="help">https://docs.anythingllm.com/</url>

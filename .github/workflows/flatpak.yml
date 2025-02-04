@@ -7,8 +7,8 @@ name: CI
 jobs:
   flatpak:
     permissions:
-      actions: write
-
+      contents: write
+      
     name: "Flatpak"
     runs-on: ubuntu-latest
     container:
@@ -21,22 +21,7 @@ jobs:
           bundle: AnythingLLM.flatpak
           manifest-path: flatpak.yaml
           cache-key: flatpak-builder-${{ github.sha }}
-      - uses: actions/upload-artifact@v4
-        with:
-          retention-days: 1
-          path: "*.flatpak"
-
-  release:
-    permissions:
-      contents: write
-
-    needs: flatpak
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: flatpak-bundle
-      - name: Display structure of downloaded files
+      - name: Display built files
         run: ls -R
       - name: Create Release
         id: create_release

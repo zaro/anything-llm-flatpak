@@ -16,11 +16,12 @@ jobs:
       options: --privileged
     steps:
       - uses: actions/checkout@v4
-      - uses: flatpak/flatpak-github-actions/flatpak-builder@v6.3
+      - uses: flathub-infra/flatpak-github-actions/flatpak-builder@master
         with:
           bundle: AnythingLLM.flatpak
           manifest-path: flatpak.yaml
           cache-key: flatpak-builder-${{ github.sha }}
+          upload-artifact: false
       - name: Display built files
         run: ls -R
       - name: Create Release

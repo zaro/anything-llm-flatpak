@@ -5,8 +5,8 @@ import hashlib
 import json
 import xml.etree.ElementTree
 
-app_image_url = "https://cdn.useanything.com/latest/AnythingLLMDesktop.AppImage"
-check_version_url = "https://cdn.useanything.com/latest/version.txt"
+app_image_url = "https://cdn.anythingllm.com/latest/AnythingLLMDesktop.AppImage"
+check_version_url = "https://cdn.anythingllm.com/latest/version.txt"
 f = urllib.request.urlopen(check_version_url)
 last_modified_tuple = email.utils.parsedate(f.info()['Last-Modified'])
 latest_version = f.read().decode('ascii')

@@ -1,0 +1,20 @@
+
+on:
+    schedule:
+        - cron: "34 5 * * *"
+name: Check for new version
+jobs:
+    version_check:
+        permissions:
+            contents: write
+            
+        name: "Update"
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+          with:
+            fetch-depth: 0
+        - run: python3 update-version.py
+        - name: Create Pull Request
+          uses: peter-evans/create-pull-request@v7
+    

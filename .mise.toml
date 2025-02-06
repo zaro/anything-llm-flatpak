@@ -1,0 +1,10 @@
+[env]
+_.file = '.env'
+OPENAI_CONFIG_PATH = "{{ [config_root, '.openai'] | join_path }}"
+
+[tools]
+# specify single or multiple versions
+python = { version="3.12", virtualenv=".venv"} 
+
+[settings]
+python_venv_auto_create = true

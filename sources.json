@@ -2,11 +2,11 @@
   {
     "type": "file",
     "url": "https://cdn.anythingllm.com/latest/AnythingLLMDesktop.AppImage",
-    "sha256": "f12bc5f3fc5214899c67d1fc08d9e1f2783d52570ce4d89213619040d25b4f0e"
+    "sha256": "6e5f36326e50bbd786243e142f24896fdb7125ac32f41b30086838724aee2d45"
   },
   {
     "type": "file",
     "path": "com.useanything.AnythingLLMDesktop.metainfo.xml",
-    "sha256": "c49d054d101b9ecb3355d5db31b26e3c979f0d0b9cb540f6f1431865847c0cae"
+    "sha256": "c5ef6b5f07bc68a8d454f85cf7aa38c58a197839aae197e9454341e3329f362c"
   }
 ]

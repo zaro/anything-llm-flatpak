@@ -1,0 +1,59 @@
+name: Auto Tag on PR Merge
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main # Change this to your default branch if different
+
+  # Allow manual triggering of the workflow for testing
+  workflow_dispatch:
+    # No inputs needed
+
+jobs:
+  tag-on-merge:
+    if: github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Need full history for tags
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract tag value from XML
+        id: xml-info
+        uses: mavrosxristoforos/get-xml-info@2.0
+        with:
+          xml-file: "com.useanything.AnythingLLMDesktop.metainfo.xml" # REPLACE with your XML file path
+          xpath: "string(//releases/release[last()]/@version)" # Gets just the value of the version attribute
+
+      - name: Display extracted value
+        run: echo "Extracted tag value is ${{ steps.xml-info.outputs.info }}"
+
+      - name: Check if tag exists
+        id: check-tag
+        run: |
+          TAG_VALUE="${{ steps.xml-info.outputs.info }}"
+          echo "Checking if tag $TAG_VALUE exists..."
+          if git tag -l "$TAG_VALUE" | grep -q "$TAG_VALUE"; then
+            echo "tag_exists=true" >> $GITHUB_OUTPUT
+            echo "Tag $TAG_VALUE already exists."
+          else
+            echo "tag_exists=false" >> $GITHUB_OUTPUT
+            echo "Tag $TAG_VALUE does not exist yet."
+          fi
+
+      - name: Create and push tag
+        if: steps.check-tag.outputs.tag_exists == 'false'
+        run: |
+          TAG_VALUE="${{ steps.xml-info.outputs.info }}"
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          echo "Creating tag $TAG_VALUE"
+          git tag "$TAG_VALUE"
+          echo "Pushing tag to remote"
+          git push origin "$TAG_VALUE"

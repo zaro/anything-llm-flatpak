@@ -8,7 +8,7 @@ jobs:
   flatpak:
     permissions:
       contents: write
-      
+
     name: "Flatpak"
     runs-on: ubuntu-latest
     container:
@@ -29,7 +29,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         if: ${{ startsWith(github.ref, 'refs/tags/') }}
         with:
-          draft: true
+          draft: false
           files: |
             *.flatpak
             */*.flatpak

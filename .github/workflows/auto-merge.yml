@@ -1,0 +1,20 @@
+name: Auto-Merge PR
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  check_suite:
+    types: [completed]
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto-merge PR
+        uses: pascalgn/automerge-action@v0.16.4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MERGE_LABELS: "automatic-new-version"
+          MERGE_METHOD: "rebase"
+          MERGE_COMMIT_MESSAGE: "New version"
+          MERGE_DELETE_BRANCH: "true"

@@ -35,7 +35,7 @@ modules:
       - type: script
         dest-filename: run.sh
         commands:
-          - exec /app/anythingllm-desktop/anythingllm-desktop --no-sandbox  "$@"
+          - exec /app/anythingllm-desktop/anythingllm-desktop --no-sandbox --ozone-platform-hint=auto "$@"
       - sources.json
   - name: host-spawn
     buildsystem: simple

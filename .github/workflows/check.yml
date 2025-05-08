@@ -8,6 +8,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      issues: write
 
     name: "Update"
     runs-on: ubuntu-latest

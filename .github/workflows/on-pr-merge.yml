@@ -4,7 +4,7 @@ on:
   pull_request:
     types: [closed]
     branches:
-      - main # Change this to your default branch if different
+      - master
 
   # Allow manual triggering of the workflow for testing
   workflow_dispatch:
